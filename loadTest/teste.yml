@@ -1,0 +1,20 @@
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 15
+      arrivalRate: 50
+      rampTo: 50
+      name: "Primeira onda"
+    - duration: 15
+      arrivalRate: 100
+      rampTo: 50
+      name: "Segunda onda"
+    - duration: 15
+      arrivalRate: 300
+      rampTo: 50
+      name: "Terceira onda"
+
+scenarios:
+  - flow:
+      - get:
+          url: "/"
