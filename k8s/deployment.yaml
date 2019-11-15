@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-presentation-deployment
+  labels:
+    app: api-presentation
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: api-presentation
+  template:
+    metadata:
+      labels:
+        app: api-presentation
+    spec:
+      containers:
+      - name: api-presentation
+        image: oxerael/so-apresentacao:0.0.3
+        ports:
+        - containerPort: 3000
