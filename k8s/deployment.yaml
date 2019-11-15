@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: api-presentation
-        image: oxerael/so-apresentacao:0.0.3
+        image: oxerael/so-apresentacao:0.0.4
         ports:
         - containerPort: 3000
