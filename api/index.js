@@ -22,7 +22,11 @@ app.get('/healthcheck', function(_, res) {
 })
 
 app.get('/', function(_, res) {
-  res.status(200).json(fakerResponse);
+  const element = []
+  for (let index = 0; index < 10000000; index++) {
+    element.push(Math.random())
+  }
+  res.status(200).json({ element })
 })
 
 app.listen(3000, function() {
