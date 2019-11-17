@@ -23,7 +23,7 @@ app.get('/healthcheck', function(_, res) {
 
 app.get('/', function(_, res) {
   const element = []
-  for (let index = 0; index < 10000000; index++) {
+  for (let index = 0; index < 10000; index++) {
     element.push(Math.random())
   }
   res.status(200).json({ element })
