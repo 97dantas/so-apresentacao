@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: api-presentation
-          image: oxerael/so-apresentacao:0.0.6
+          image: oxerael/so-apresentacao:0.0.7
           resources:
             requests:
               memory: 70Mi
