@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: api-presentation
+  namespace: presentation
   labels:
     app: api-presentation
 spec:
@@ -19,3 +20,17 @@ spec:
         image: oxerael/so-apresentacao:0.0.5
         ports:
         - containerPort: 3000
+      livenessProbe:
+        failureThreshold: 3
+        httpGet:
+          path: /healthcheck
+          port: 3000
+        initialDelaySeconds: 10
+        periodSeconds: 10
+      readinessProbe:
+        failureThreshold: 2
+        httpGet:
+          path: /healthcheck
+          port: 3000
+        initialDelaySeconds: 10
+        periodSeconds: 20
