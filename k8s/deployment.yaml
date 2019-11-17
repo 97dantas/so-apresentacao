@@ -20,10 +20,10 @@ spec:
           image: oxerael/so-apresentacao:0.0.7
           resources:
             requests:
-              memory: 70Mi
-              cpu: 500m
+              memory: 256Mi
+              cpu: 200m
             limits:
-              memory: 80Mi
+              memory: 512Mi
               cpu: 500m
           ports:
             - containerPort: 3000
