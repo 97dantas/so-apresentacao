@@ -1,0 +1,13 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: presentation-hpa
+  namespace: presentation
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1beta1
+    kind: Deployment
+    name: api-presentation
+  minReplicas: 2
+  maxReplicas: 200
+  targetCPUUtilizationPercentage: 80
